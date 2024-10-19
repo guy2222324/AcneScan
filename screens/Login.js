@@ -1,18 +1,14 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, Button, StyleSheet } from 'react-native';
-import { getAuth, signInWithEmailAndPassword } from '@firebase/auth';
 
 const Login = ({ navigation }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const auth = getAuth();
 
-  const handleLogin = async () => {
-    try {
-      await signInWithEmailAndPassword(auth, email, password);
-    } catch (error) {
-      console.error('Login error:', error.message);
-    }
+  const handleLogin = () => {
+    // เขียนฟังก์ชัน login ของคุณที่นี่หากไม่ใช้ Firebase
+    // ลบ Firebase auth ออกทั้งหมด
+    console.log('Logged in');
   };
 
   return (
